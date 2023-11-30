@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open App</title>
+</head>
+<body onload="openApp()">
+
+    <script>
+        function openApp() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.ekincare.isos"; // Replace "androidapp" with your Android app's URL scheme
+            } else if (/iPad|iPhone|iPod/i.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/us/app/healthcore360/id6468837967"; // Replace "iosapp" with your iOS app's URL scheme
+            } else {
+                // Handle other devices or provide a fallback
+                alert("Unsupported device");
+            }
+        }
+    </script>
+
+</body>
+</html>
